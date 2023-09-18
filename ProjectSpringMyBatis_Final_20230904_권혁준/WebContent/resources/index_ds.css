@@ -1,0 +1,165 @@
+body {
+    display: flex;
+}
+
+#floatdiv {
+    position:fixed; /* 어디서든 항상 고정되어있도록 설정 */ 
+    width:175px;
+    display:inline-block;
+    right:0px; /* 창에서 오른쪽 길이 */
+    top:94%; /* 창에서 위에서 부터의 높이 */
+    background-color: transparent;
+    margin:0;
+    text-align: right;
+    padding: 0px 50px;
+}
+
+.destination {
+	display: hidden;
+}
+
+.floating_btnDS {
+	border: 0px;
+	border-radius: 10px;
+	background-color: orange;
+	color: white;
+	width : 80px;
+	font-size: 20px;
+}
+
+.floating_btnDS a {
+	text-decoration : none;
+	color: white;
+}
+
+#wrap {
+	width: 100%;
+    min-width: 1300px;
+    height: 700px;
+    margin: 0px auto;
+    padding: 0;
+}
+
+header {
+    width: auto;
+    height: 20%;
+    background-color: black;
+}
+
+footer {
+    width: auto;
+    height: 20%;
+    background-color:black;
+    padding: 15px;
+    color: white;
+}
+
+nav {
+    width: auto;
+    height: 10%;
+}
+
+section {
+    width: auto;
+    height: 85%;
+    background-color: rgb(49, 50, 64);
+}
+
+.menu {
+    padding: 10px 0px;
+}
+
+.idx_btnDS {
+	border : 0px;
+	background-color: rgb(49, 50, 64);
+	color: white;
+	font-weight: bold;
+	font-size: 50px;
+	cursor: pointer;
+}
+
+.idx_btnDS:hover{
+	text-shadow: 0 0 3px deeppink, 0 0 5px deeppink;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a,
+.dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+    font-weight : bold;
+ 	margin: 10px 4px;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    border-bottom: 2px solid white;
+    border-width: 80%;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+img.slide {
+    width: 1500px;
+    height: 500px;
+}
+
+.Star_Function {
+    padding: 5px;
+}
+
+.logo_size {
+    padding: 0px 10px;
+    width : 150px;
+    height : auto;
+}
+
+.link_cust {
+    text-decoration: none;
+    color : white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+a.link_cust:hover {
+    color : orange;
+}

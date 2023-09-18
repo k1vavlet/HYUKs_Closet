@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+       Copyright 2009-2022 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          https://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.myBatis.MemberControl">
+	<insert id="memIns" parameterType="com.spring.Member.MemberDTO">
+		insert into PJT_MEMBER (
+			mem_id, mem_pw, mem_name, mem_brith, mem_hp, mem_email, mem_addr1, mem_addr2
+		) values (#{id}, #{pwd}, #{name}, #{date}, #{hp}, #{email}, #{addr01}, #{addr02})
+	</insert>
+	
+	<update id="memUpd" parameterType="com.spring.Member.MemberDTO">
+		UPDATE PJT_MEMBER SET mem_pw = #{pwd}, mem_email = #{email}, mem_brith = #{date}, mem_hp = #{hp}, mem_addr1 = #{addr01}, mem_addr2 = #{addr02} WHERE mem_id = #{id} and mem_name = #{name}
+	</update>
+	
+	<delete id="memDel" parameterType="com.spring.Member.MemberDTO">
+		delete from PJT_MEMBER
+			where mem_id = #{id} and mem_pw = #{pwd}
+	</delete>
+	
+	<select id="memLog" resultType="com.spring.Member.MemberDTO">
+		select * from PJT_MEMBER where mem_id = #{id} and mem_pw = #{pwd}
+	</select>
+	
+	<select id="memSel" resultType="com.spring.Member.MemberDTO">
+		select mem_id as "id", mem_name as "name", mem_pw as "pwd", mem_brith as "date", mem_hp as "hp", mem_email as "email", mem_addr1 as "addr01", mem_addr2 as "addr02" from PJT_MEMBER where mem_id = #{id}
+	</select>
+	
+	<select id="IdChking" resultType="com.spring.Member.MemberDTO">
+		select * from PJT_MEMBER where mem_id = #{id}
+	</select>
+	
+	<select id="FindID" resultType="com.spring.Member.MemberDTO">
+		select mem_id as "id" from PJT_MEMBER where mem_email = #{email} and mem_name = #{name}
+	</select>
+	
+	<select id="FindPW" resultType="com.spring.Member.MemberDTO">
+		select mem_id as "id" from PJT_MEMBER where mem_email = #{email} and mem_id = #{id} and mem_name = #{name}
+	</select>
+	
+	<update id="memChange_PWD" parameterType="com.spring.Member.MemberDTO">
+		UPDATE PJT_MEMBER SET mem_pw = #{pwd} WHERE mem_id = #{id}
+	</update>
+</mapper>
